@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCF Partnership — Financial Planning Made Simple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        
+        nav .logo {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1e3a5f;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 30px;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #1e3a5f;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        /* Lead Capture Form */
+        .form-container {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+        
+        .form-container h3 {
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.95em;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95em;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2d5a8c;
+            box-shadow: 0 0 0 3px rgba(45, 90, 140, 0.1);
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #2d5a8c 0%, #1e3a5f 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(45, 90, 140, 0.3);
+        }
+        
+        .form-footer {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .feature h4 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        /* Social Proof Section */
+        .proof {
+            background: #f5f7fb;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .proof h2 {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial p {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: #1e3a5f;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .proof-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .metric {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .metric-number {
+            font-size: 2.2em;
+            color: #2d5a8c;
+            font-weight: 700;
+        }
+        
+        .metric-label {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+        
+        /* Chatbot Preview */
+        .chatbot-section {
+            background: white;
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .chatbot-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+        
+        .chat-container {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .chat-message {
+            margin-bottom: 15px;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .chat-bot {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .chat-bubble {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            border-radius: 8px;
+            max-width: 400px;
+            font-size: 0.95em;
+            color: #333;
+        }
+        
+        .chat-user {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+        
+        .chat-user .chat-bubble {
+            background: #2d5a8c;
+            color: white;
+            border: none;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #2d5a8c 0%, #1e3a5f 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: white;
+            color: #2d5a8c;
+            padding: 14px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        footer a {
+            color: #2d5a8c;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .proof-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">HCF Partnership</div>
+        <div>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Financial Health Check</h1>
+            <p>Get a personalized 2-minute assessment and discover exactly where your money is working hardest — and where it isn't.</p>
+            
+            <div class="form-container">
+                <h3>Let's Get Started</h3>
+                <form>
+                    <div class="form-group">
+                        <label>What's your age range?</label>
+                        <select required>
+                            <option>Select...</option>
+                            <option>Under 30</option>
+                            <option>30–40</option>
+                            <option>40–50</option>
+                            <option>50–60</option>
+                            <option>60+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Approximate net worth</label>
+                        <select required>
+                            <option>Select...</option>
+                            <option>£100k–£500k</option>
+                            <option>£500k–£1m</option>
+                            <option>£1m–£2.5m</option>
+                            <option>£2.5m+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>What's your main goal?</label>
+                        <select required>
+                            <option>Select...</option>
+                            <option>Wealth growth</option>
+                            <option>Tax efficiency</option>
+                            <option>Retirement planning</option>
+                            <option>Estate planning</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Get Your Free Report</button>
+                    <div class="form-footer">Takes 2 minutes. Results instant. No email required.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h4>Instant Insights</h4>
+            <p>Real-time assessment of your financial position and opportunities.</p>
+        </div>
+        
+        <div class="feature">
+            <div class="feature-icon">📅</div>
+            <h4>Book Instantly</h4>
+            <p>See available slots and book a consultation without waiting.</p>
+        </div>
+        
+        <div class="feature">
+            <div class="feature-icon">💬</div>
+            <h4>Always Available</h4>
+            <p>Chat with our AI advisor 24/7. Get answers to your questions immediately.</p>
+        </div>
+    </section>
+    
+    <!-- Social Proof Section -->
+    <section class="proof">
+        <h2>Real Results. Real Clients.</h2>
+        
+        <div class="testimonial">
+            <p>"Kevin and the team restructured our £2.3m portfolio and identified £47k in annual tax savings. Professional, thorough, and worth every penny."</p>
+            <div class="testimonial-author">— Michael & Sarah T., Hertfordshire</div>
+        </div>
+        
+        <div class="proof-metrics">
+            <div class="metric">
+                <div class="metric-number">£2.8bn+</div>
+                <div class="metric-label">Assets Under Management</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number">1,200+</div>
+                <div class="metric-label">Happy Clients</div>
+            </div>
+            <div class="metric">
+                <div class="metric-number">40+</div>
+                <div class="metric-label">Years Experience</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chatbot Preview Section -->
+    <section class="chatbot-section">
+        <h2>Always Here to Help</h2>
+        
+        <div class="chat-container">
+            <div class="chat-bot">
+                <div class="chat-bubble">Hi there 👋 I'm Alex. What would you like to know?</div>
+            </div>
+            
+            <div class="chat-user">
+                <div class="chat-bubble">What do you charge for planning?</div>
+            </div>
+            
+            <div class="chat-bot">
+                <div class="chat-bubble">Good question! Our fees depend on complexity, but here's our structure: Initial consultation (free), planning (£2.5k–£5k), ongoing management (0.5–1.5% of AUM). Want to discuss your situation?</div>
+            </div>
+            
+            <div class="chat-user">
+                <div class="chat-bubble">Are you FCA regulated?</div>
+            </div>
+            
+            <div class="chat-bot">
+                <div class="chat-bubble">Yes, fully FCA regulated. You can verify us here. We've been in business for 40 years. Questions?</div>
+            </div>
+            
+            <div class="chat-user">
+                <div class="chat-bubble">Can I book a call?</div>
+            </div>
+            
+            <div class="chat-bot">
+                <div class="chat-bubble">Absolutely! What day works for you? 📅 <strong>[Show Calendar]</strong></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Ready to Take Control?</h2>
+        <p>Your free financial health check is just a few clicks away.</p>
+        <button class="btn-primary">Start Your Assessment</button>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>HCF Partnership | FCA Regulated | 40+ Years of Excellence</p>
+        <p style="margin-top: 15px; opacity: 0.7;">
+            <a href="#">Contact</a> | <a href="#">Privacy</a> | <a href="#">Careers</a>
+        </p>
+    </footer>
+</body>
+</html>
