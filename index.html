@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCF Partnership — ISA Enhanced Site Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+        
+        .comparison h2 {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #e74c3c;
+        }
+        
+        .column-before h2 {
+            border-bottom-color: #e74c3c;
+        }
+        
+        .column-after h2 {
+            border-bottom-color: #27ae60;
+        }
+        
+        .mockup-section {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #e74c3c;
+            border-radius: 4px;
+        }
+        
+        .column-after .mockup-section {
+            background: #f0fdf4;
+            border-left-color: #27ae60;
+        }
+        
+        .mockup-section h3 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .mockup-section p, .mockup-section ul {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .mockup-section ul {
+            margin-left: 20px;
+        }
+        
+        .mockup-section li {
+            margin-bottom: 8px;
+        }
+        
+        .problem {
+            background: #fef5f5;
+            border: 1px solid #e74c3c;
+        }
+        
+        .solution {
+            background: #f0fdf4;
+            border: 1px solid #27ae60;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            margin-right: 8px;
+        }
+        
+        .demo-box {
+            background: white;
+            border: 2px dashed #27ae60;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        
+        .demo-box h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        .btn-mockup {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+        
+        .btn-mockup:hover {
+            background: #229954;
+        }
+        
+        .impact-section {
+            background: #ecf0f1;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 6px;
+        }
+        
+        .impact-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .metric {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .metric-number {
+            font-size: 2.5em;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .metric-label {
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .btn-cta {
+            display: inline-block;
+            background: white;
+            color: #27ae60;
+            padding: 15px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-cta:hover {
+            background: #ecf0f1;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HCF Partnership Enhanced</h1>
+            <p>ISA Implementation — 48-Hour Mockup</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="comparison">
+            <!-- BEFORE COLUMN -->
+            <div class="column-before">
+                <h2>❌ Current</h2>
+                
+                <div class="mockup-section problem">
+                    <h3>Hero</h3>
+                    <p>Generic messaging. No lead capture.</p>
+                </div>
+                
+                <div class="mockup-section problem">
+                    <h3>Booking</h3>
+                    <p>No instant scheduling. Form → wait for response.</p>
+                </div>
+                
+                <div class="mockup-section problem">
+                    <h3>After Hours</h3>
+                    <p>Interested visitor: phone call → next day reply.</p>
+                </div>
+                
+                <div class="mockup-section problem">
+                    <h3>Qualification</h3>
+                    <p>All leads treated equally. No filtering.</p>
+                </div>
+                
+                <div class="mockup-section problem">
+                    <h3>Trust</h3>
+                    <p>Credentials buried. No client proof.</p>
+                </div>
+            </div>
+            
+            <!-- AFTER COLUMN -->
+            <div class="column-after">
+                <h2>✅ ISA Enhanced</h2>
+                
+                <div class="mockup-section solution">
+                    <h3>Lead Capture</h3>
+                    <p>"Get Your Free Financial Health Check"</p>
+                    <p style="font-size: 0.9em; margin-top: 8px;">Quick 2-min assessment → Instant report</p>
+                    <span class="feature-badge">🤖 AI-Powered</span>
+                </div>
+                
+                <div class="mockup-section solution">
+                    <h3>Instant Calendar</h3>
+                    <p>Show availability. Book immediately.</p>
+                    <p style="font-size: 0.9em; margin-top: 8px;">Wed 9am | Wed 2pm | Thu 10am</p>
+                    <span class="feature-badge">📅 Live</span>
+                </div>
+                
+                <div class="mockup-section solution">
+                    <h3>24/7 Chatbot</h3>
+                    <p>Answers pricing, availability, credentials instantly.</p>
+                    <p style="font-size: 0.9em; margin-top: 8px;">No more "I'll call you tomorrow"</p>
+                    <span class="feature-badge">💬 Always On</span>
+                </div>
+                
+                <div class="mockup-section solution">
+                    <h3>Smart Qualifying</h3>
+                    <p>Filters unqualified leads automatically.</p>
+                    <p style="font-size: 0.9em; margin-top: 8px;">Only serious prospects reach your team</p>
+                    <span class="feature-badge">🎯 Pre-Filtered</span>
+                </div>
+                
+                <div class="mockup-section solution">
+                    <h3>Proof & Trust</h3>
+                    <p>Client outcomes, testimonials, FCA badge, AUM visible.</p>
+                    <p style="font-size: 0.9em; margin-top: 8px;">Above the fold. Not buried.</p>
+                    <span class="feature-badge">⭐ Visible</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="impact-section">
+            <h2>Projected Impact (12 Weeks)</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-number">+45%</div>
+                    <div class="metric-label">Lead Conversion Rate</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">3x</div>
+                    <div class="metric-label">Qualified Leads</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">24/7</div>
+                    <div class="metric-label">Lead Engagement</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="padding: 40px; background: white; border-left: 4px solid #3498db; margin: 40px 0; border-radius: 4px;">
+            <h3 style="margin-bottom: 15px;">The Flow</h3>
+            <p style="margin-bottom: 10px;">Visitor → Free assessment (2 min) → Instant report → Book call or chat with bot 24/7</p>
+            <p style="color: #27ae60; font-weight: bold;">Result: More leads, better leads, no cold outreach gaps.</p>
+        </div>
+        
+        <div class="cta-section">
+            <div class="container">
+                <h2>Next Step?</h2>
+                <p>This is what your site could look like in 48 hours.</p>
+                <p style="opacity: 0.9;">No cost to look. No obligation to proceed.</p>
+                <button class="btn-cta" onclick="alert('👉 Reply YES to see this live\n\nsat@installsmart.ai')">I'm Interested</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 30px; margin-top: 40px;">
+        <p>InstallSmart AI • Making websites work harder</p>
+        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">sat@installsmart.ai | 07768 891111</p>
+    </footer>
+</body>
+</html>
